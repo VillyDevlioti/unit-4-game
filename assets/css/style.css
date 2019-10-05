@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+  }
+
+body {
+      background-color: #FFE3DC;
+  }
+
+.jumbotron{
+    box-shadow: -10px 10px  #DBB4AD;
+    border: 1px solid #aaa;
+
+}
+h1.display-3 {
+font-family: 'Dancing Script', cursive;
+text-align: center;
+
+}
+
+.lead {
+    text-align: center;
+}
+
+.scores {
+    font-family: 'Grenze', serif;
+    background-color: #FFFD98;
+    border: 1px solid #ddd;
+    padding: 1%;
+    margin: 1%;
+}
+
+.crystal-images >img {
+    width: 80%;
+    margin: 15% 0 15% 0;
+    padding: 0 2% 0 2%;
+}
+
+.wins-losses {
+    font-family: 'Grenze', serif;
+    background-color: #BDE4A7;
+    border: 1px solid #ddd;
+    padding: 1%;
+    margin: 1%;
+}
