@@ -4,6 +4,7 @@ Initialize game
     give a new random number for user to guess
     assign random numbers to crystals
     start game
+    write wins and losses
 
 Start game
     check where the user clicks

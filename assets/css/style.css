@@ -25,6 +25,7 @@ text-align: center;
     font-family: 'Grenze', serif;
     background-color: #FFFD98;
     border: 1px solid #ddd;
+    box-shadow: -10px 10px  #DBB4AD;
     padding: 1%;
     margin: 1%;
 }
@@ -39,6 +40,7 @@ text-align: center;
     font-family: 'Grenze', serif;
     background-color: #BDE4A7;
     border: 1px solid #ddd;
+    box-shadow: -10px 10px  #DBB4AD;
     padding: 1%;
     margin: 1%;
 }
