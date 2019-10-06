@@ -8,7 +8,7 @@ var crystalPoints=[]; // this is where we store all the crystal points
 $(document).ready(function() {
 
     function crystalGameLogic() {
-        //I had to look that up, because I had spaghetti code
+        //I had to look that code up, because I had spaghetti code,
         $("div[id*='button-']").on("click", function(){
             userScore += Number($(this).attr('value'));
             $('#user-score').text(userScore);
@@ -31,7 +31,7 @@ $(document).ready(function() {
         console.log(userScore, "inside initialize");
 
         $('#user-score').text(userScore);
-        computerNumber = Math.ceil(20+Math.random()*30);
+        computerNumber = Math.ceil(18+Math.random()*101);
         $('#computer-score').text(computerNumber);
         
         //Then, assign numbers to crystals
@@ -39,7 +39,7 @@ $(document).ready(function() {
         for (var i=0; i<4; i++) {
             //create a new table every time. 
             //Splice: At position i, remove 1 item, and add a random number
-            crystalPoints.splice(i,1,Math.round(Math.random()*11));
+            crystalPoints.splice(i,1,Math.ceil(Math.random()*12));
         }
         console.log(crystalPoints);
 
