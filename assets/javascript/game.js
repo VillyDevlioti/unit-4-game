@@ -8,7 +8,7 @@ var crystalPoints=[]; // this is where we store all the crystal points
 $(document).ready(function() {
 
     function crystalGameLogic() {
-        //I had to look that code up, because I had spaghetti code,
+        //I had to look that code up, because I had spaghetti code. 
         $("div[id*='button-']").on("click", function(){
             userScore += Number($(this).attr('value'));
             $('#user-score').text(userScore);
@@ -28,9 +28,9 @@ $(document).ready(function() {
 
         //First, assign a new computer score and turn user Score to 0
         userScore=0;
+        $('#user-score').text(userScore);
         console.log(userScore, "inside initialize");
 
-        $('#user-score').text(userScore);
         computerNumber = Math.ceil(18+Math.random()*101);
         $('#computer-score').text(computerNumber);
         
@@ -56,6 +56,7 @@ $(document).ready(function() {
         //Now it's time to call the main function
         crystalGameLogic();
     }
+
     initializeGame();
 
 });
