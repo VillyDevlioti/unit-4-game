@@ -11,26 +11,64 @@ $(document).ready(function() {
             $('#crystal-1').on("click",function(){
                 userScore+=crystalPoints[0];
                 $('#user-score').text(userScore);
-                console.log(userScore);
-                return;
+                console.log("updated user score after crystal 1",userScore);
+                if(userScore>computerNumber){
+                    losses++;
+                    crystalPoints=[];
+                    initializeGame();
+                }
+                else if (userScore === computerNumber)
+                {
+                    wins++;
+                    crystalPoints=[];
+                    initializeGame();
+                }
             });
             $('#crystal-2').on("click",function(){
                 userScore+=crystalPoints[1];
-                console.log(userScore);
+                console.log("updated user score after crystal 2", userScore);
                 $('#user-score').text(userScore);
-                return;
+                if(userScore>computerNumber){
+                    losses++;
+                    crystalPoints=[];
+                    initializeGame();
+                }
+                else if (userScore === computerNumber)
+                {
+                    wins++;
+                    crystalPoints=[];
+                    initializeGame();
+                }
             });
             $('#crystal-3').on("click",function(){
                 userScore+=crystalPoints[2];
-                console.log(userScore);
+                console.log("updated user score after crystal 3", userScore);
                 $('#user-score').text(userScore);
-                return;
+                if(userScore>computerNumber){
+                    losses++;
+                    crystalPoints=[];
+                    initializeGame();
+                }
+                else if (userScore === computerNumber)
+                {
+                    wins++;
+                    crystalPoints=[];
+                    initializeGame();
+                }
             });
             $('#crystal-4').on("click",function(){
                 userScore+=crystalPoints[3];
-                console.log(userScore);
+                console.log("updated user score after crystal 4", userScore);
                 $('#user-score').text(userScore);
-                return;
+                if(userScore>computerNumber){
+                    losses++;
+                    initializeGame();
+                }
+                else if (userScore === computerNumber)
+                {
+                    wins++;
+                    initializeGame();
+                }
             });
 
     }
@@ -46,8 +84,7 @@ $(document).ready(function() {
         for (var i=0; i<4; i++) {
             newValue = Math.ceil(Math.random()*9);
             crystalPoints.push(newValue);
-            console.log(crystalPoints[i]);
-
+            console.log("the starting points of each crystal",crystalPoints[i]);
         }
     
         //Then write how many wins and losses the user currently has
