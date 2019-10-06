@@ -18,3 +18,6 @@ Start game
         else
             loss ++
             initialize game
+
+
+Note: I've noticed that after the first game is lost/won the userScore doesn't update properly, in fact it doubles the value of each gem. I've tried controlling and monitoring with console.log and using stopPropagation, but it didn't help!¯\_(ツ)_/¯

@@ -10,18 +10,22 @@ $(document).ready(function() {
     function crystalGameLogic() {
         //I had to look that code up, because I had spaghetti code. 
         $("div[id*='button-']").on("click", function(){
+            console.log(userScore, "inside logic first");
             userScore += Number($(this).attr('value'));
             $('#user-score').text(userScore);
             console.log(userScore, "inside logic");
+        
+            //now check whether score is okay
             if(userScore>computerNumber){
                 losses++;
-                initializeGame();
+                initializeGame();       
             }
             else if(userScore===computerNumber) {
                 wins++;
                 initializeGame();
             }
         });
+        
     }
 
     function initializeGame (){
