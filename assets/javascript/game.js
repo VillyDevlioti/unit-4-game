@@ -12,13 +12,13 @@ $(document).ready(function() {
         $("div[id*='button-']").on("click", function(){
             userScore += Number($(this).attr('value'));
             $('#user-score').text(userScore);
-            console.log(userScore);
+            console.log(userScore, "inside logic");
             if(userScore>computerNumber){
                 losses++;
                 initializeGame();
             }
             else if(userScore===computerNumber) {
-                win++;
+                wins++;
                 initializeGame();
             }
         });
@@ -28,7 +28,8 @@ $(document).ready(function() {
 
         //First, assign a new computer score and turn user Score to 0
         userScore=0;
-        console.log(userScore);
+        console.log(userScore, "inside initialize");
+
         $('#user-score').text(userScore);
         computerNumber = Math.ceil(20+Math.random()*30);
         $('#computer-score').text(computerNumber);
@@ -42,9 +43,8 @@ $(document).ready(function() {
         }
         console.log(crystalPoints);
 
-        //Then I create a new attribute to assign it to each crystal, because I want to use this and understand how it works!!!
+        //Then I create a new attribute to assign it to each crystal, because I want to use 'this' and understand how it works!!!
         $('#button-1').attr('value', crystalPoints[0]);
-        console.log()
         $('#button-2').attr('value', crystalPoints[1]);
         $('#button-3').attr('value', crystalPoints[2]);
         $('#button-4').attr('value', crystalPoints[3]);
@@ -56,7 +56,7 @@ $(document).ready(function() {
         //Now it's time to call the main function
         crystalGameLogic();
     }
-
-        initializeGame();
+    initializeGame();
 
 });
+
