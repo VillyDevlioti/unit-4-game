@@ -7,6 +7,19 @@ var crystalPoints=[]; // this is where we store all the crystal points
 
 $(document).ready(function() {
 
+    function yay() {
+        wins++; 
+        initializeGame();
+    }
+
+    function nay () {
+        losses++;
+        initializeGame();
+    }
+    
+    
+    
+    
     function crystalGameLogic() {
         //I had to look that code up, because I had spaghetti code. 
         $("div[id*='button-']").on("click", function(){
@@ -14,8 +27,17 @@ $(document).ready(function() {
             userScore += Number($(this).attr('value'));
             $('#user-score').text(userScore);
             console.log(userScore, "inside logic");
-        
-            //now check whether score is okay
+
+            if (userScore>computerNumber) {
+                nay();
+            }
+
+            else if (userScore===computerNumber) {
+                yay();
+            }
+
+
+/*             //now check whether score is okay
             if(userScore>computerNumber){
                 losses++;
                 initializeGame();       
@@ -23,9 +45,9 @@ $(document).ready(function() {
             else if(userScore===computerNumber) {
                 wins++;
                 initializeGame();
-            }
+            } */
         });
-        
+
     }
 
     function initializeGame (){
@@ -44,6 +66,7 @@ $(document).ready(function() {
             //create a new table every time. 
             //Splice: At position i, remove 1 item, and add a random number
             crystalPoints.splice(i,1,Math.ceil(Math.random()*12));
+           
         }
         console.log(crystalPoints);
 
@@ -58,10 +81,11 @@ $(document).ready(function() {
         $('#losses').text(losses);
 
         //Now it's time to call the main function
-        crystalGameLogic();
+        
     }
 
     initializeGame();
+    crystalGameLogic();
 
 });
 
